@@ -244,7 +244,7 @@ class DocsCLI < Thor
           FileUtils.mkpath(dir)
 
           ['index.json', 'meta.json'].each do |filename|
-            open("./#{doc.path}/#{filename}?#{time}") do |file|
+            open("https://docs.devdocs.io/#{doc.path}/#{filename}?#{time}") do |file|
               mutex.synchronize do
                 path = File.join(dir, filename)
                 File.write(path, file.read)
